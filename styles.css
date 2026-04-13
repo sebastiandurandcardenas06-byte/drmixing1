@@ -1,0 +1,307 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background: #000;
+}
+
+/* NAVBAR */
+.navbar{
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: linear-gradient(to right, #7ecbff, #0b6edc);
+}
+
+.nav-left,
+.nav-right{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar a{
+  color: #000;
+  text-decoration: none;
+  font-weight: 800;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.navbar a:hover{
+  background: rgba(255,255,255,0.30);
+  color: #0b2a4a;
+  transform: translateY(-1px);
+}
+
+.logo img{
+  width: 120px;
+}
+
+.icons{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon{
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease, opacity .2s ease;
+  opacity: .9;
+}
+
+.icon:hover{
+  transform: scale(1.15);
+  opacity: 1;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));
+}
+
+/* HERO HOME */
+.hero{
+  position: relative;
+  height: calc(100vh - 80px);
+  background: url("./img/Imagen-playa.jpg") no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+}
+
+/* overlay suave para que el texto se lea */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.00)
+  );
+  pointer-events:none;
+}
+
+.hero-text,
+.hero-products,
+.cta-center{
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text{
+  color: #7fffe8;
+  max-width: 420px;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.55);
+}
+
+.hero-text h2{
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: 800;
+}
+
+.hero-text h1{
+  font-size: 58px;
+  margin: 10px 0;
+  font-weight: 900;
+}
+
+.hero-text p{
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.hero-logo{
+  width: 240px;
+  margin-top: 15px;
+}
+
+/* BOTÓN CENTRADO WHATSAPP */
+.cta-center{
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  text-transform: uppercase;
+
+  padding: 16px 34px;
+  border-radius: 999px;
+
+  background: #25D366;
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 1px;
+  font-size: 18px;
+
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+  border: 2px solid rgba(255,255,255,0.25);
+
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.cta-center:hover{
+  background: #1ebe5d;
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.42);
+}
+
+/* BOTELLAS HOME */
+.hero-products{
+  display: flex;
+  gap: 55px;
+  align-items: flex-end;
+}
+
+.hero-products img{
+  width: 95px;
+  cursor: pointer;
+  transition: transform .25s ease;
+}
+
+.hero-products img:hover{
+  transform: translateY(-15px) scale(1.05);
+}
+
+/* ==========================
+   PÁGINA PRODUCTOS
+========================== */
+
+.productos-body{
+  background: #f4f4f4;
+}
+
+/* Navbar diferente en productos */
+.productos-nav{
+  background: linear-gradient(to right, #ffffff, #eaeaea);
+}
+
+.nav-cta{
+  background: #25D366;
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 900;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.nav-cta:hover{
+  background: #1ebe5d;
+  transform: scale(1.05);
+}
+
+/* Hero productos */
+.productos-hero{
+  text-align: center;
+  padding: 80px 20px 60px;
+  background: linear-gradient(180deg, #ffffff, #f4f4f4);
+}
+
+.productos-hero h1{
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #111;
+}
+
+.productos-hero p{
+  margin-top: 10px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Categorías */
+.categoria{
+  padding: 60px 40px;
+}
+
+.categoria h2{
+  text-align: center;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-bottom: 60px;
+  color: #111;
+  position: relative;
+}
+
+.categoria h2::after{
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #25D366, #0b6edc);
+  margin: 18px auto 0;
+  border-radius: 5px;
+}
+
+/* Grid */
+.grid-productos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 45px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.producto-card{
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 35px 20px 30px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+  transition: transform .35s ease, box-shadow .35s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.producto-card:hover{
+  transform: translateY(-18px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.20);
+}
+
+.producto-card img{
+  width: 120px;
+  height: auto;
+  margin-bottom: 22px;
+  transition: transform .35s ease;
+}
+
+.producto-card:hover img{
+  transform: scale(1.12);
+}
+
+.producto-card p{
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #111;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+  .hero{
+    padding: 0 25px;
+  }
+
+  .productos-hero h1{
+    font-size: 36px;
+  }
+
+  .categoria h2{
+    font-size: 30px;
+  }
+}
